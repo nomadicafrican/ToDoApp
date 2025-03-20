@@ -1,20 +1,36 @@
-//
-//  TaskDetailView.swift
-//  ToDoApp
-//
-//  Created by Ammar Ali on 2025-03-20.
-//
-
 import SwiftUI
 
 struct TaskDetailView: View {
+    var task: Task
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 10) {
+            Text(task.title)
+                .font(.title)
+                .fontWeight(.bold)
+            
+            Text("Due: \(task.dueDate.formatted(date: .abbreviated, time: .shortened))")
+                .font(.headline)
+            
+            if task.isCompleted {
+                Text("✅ Completed")
+                    .foregroundColor(.green)
+            } else {
+                Text("⚠️ Pending")
+                    .foregroundColor(.red)
+            }
+
+            Spacer()
+        }
+        .padding()
+        .navigationTitle("Task Details")
     }
 }
 
+// Preview
 struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailView()
+        TaskDetailView(task: Task(title: "Sample Task", dueDate: Date(), isCompleted: false))
     }
 }
+
