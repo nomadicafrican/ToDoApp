@@ -20,7 +20,9 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(tasks) { task in
-                    TaskRow(task: task)
+                    NavigationLink(destination: TaskDetailView(task: task)) {
+                        TaskRow(task: task)
+                    }
                 }
             }
             .navigationTitle("To-Do List")
