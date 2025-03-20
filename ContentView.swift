@@ -1,26 +1,12 @@
-//
-//  ContentView.swift
-//  ToDoApp
-//
-//  Created by Ammar Ali on 2025-03-20.
-//
-
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+// Task Model
+struct Task: Identifiable {
+    var id = UUID()
+    var title: String
+    var dueDate: Date
+    var isCompleted: Bool
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+
+
