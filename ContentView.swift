@@ -28,4 +28,34 @@ struct ContentView: View {
     }
 }
 
+// Task Row UI Component
+struct TaskRow: View {
+    var task: Task
+
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(task.title)
+                    .font(.headline)
+                
+                Text("Due: \(task.dueDate.formatted(date: .abbreviated, time: .shortened))")
+                    .font(.subheadline)
+                    .foregroundColor(task.isCompleted ? .green : .red)
+            }
+            
+            Spacer()
+            
+            if task.isCompleted {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundColor(.green)
+            } else {
+                Image(systemName: "exclamationmark.circle.fill")
+                    .foregroundColor(.red)
+            }
+        }
+        .padding(.vertical, 5)
+    }
+}
+
+
 
