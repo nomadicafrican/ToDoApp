@@ -7,7 +7,7 @@ struct LaunchScreen: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
-            Text("Created by Your Name")
+            Text("Created by Yours Truly")
                 .font(.subheadline)
                 .foregroundColor(.gray)
         }
