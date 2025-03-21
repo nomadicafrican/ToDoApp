@@ -1,4 +1,5 @@
 import SwiftUI
+// This view displays detailed information about a single Task
 
 struct TaskDetailView: View {
     var task: Task
@@ -27,7 +28,8 @@ struct TaskDetailView: View {
     }
 }
 
-// Preview
+// // Preview for SwiftUI Canvas / Xcode Previews
+
 struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TaskDetailView(task: Task(title: "Sample Task", dueDate: Date(), isCompleted: false))
