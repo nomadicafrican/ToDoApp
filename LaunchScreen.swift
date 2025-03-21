@@ -11,16 +11,19 @@ struct LaunchScreen: View {
                 .font(.subheadline)
                 .foregroundColor(.gray)
         }
+
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.white)
     }
+    
 }
 
 // Preview
 struct LaunchScreen_Previews: PreviewProvider {
     static var previews: some View {
         LaunchScreen()
-        
+
     }
+
 }
 
