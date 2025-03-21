@@ -1,6 +1,6 @@
 import SwiftUI
 
-// Task Model
+// This struct defines the model for a Task
 struct Task: Identifiable {
     var id = UUID()
     var title: String
@@ -30,7 +30,7 @@ struct ContentView: View {
     }
 }
 
-// Task Row UI Component
+// A single row in the task list showing task info
 struct TaskRow: View {
     var task: Task
 
@@ -59,7 +59,7 @@ struct TaskRow: View {
     }
 }
 
-// Preview
+// Enables preview in SwiftUI Canvas / Xcode
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
