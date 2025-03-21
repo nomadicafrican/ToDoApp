@@ -28,7 +28,7 @@ struct TaskDetailView: View {
     }
 }
 
-// // Preview for SwiftUI Canvas / Xcode Previews
+// // Preview for SwiftUI 
 
 struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
