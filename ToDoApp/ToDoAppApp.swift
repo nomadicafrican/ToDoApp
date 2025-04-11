@@ -13,13 +13,16 @@
  
 import SwiftUI
 
+// Main app entry point using SwiftUI's App protocol
 @main
 struct ToDoAppApp: App {
     /// Controls whether the splash (launch) screen is displayed.
     @State private var showSplash = true
 
+    // Defines the main app scene
     var body: some Scene {
         WindowGroup {
+        // Show splash screen first
             if showSplash {
                 LaunchScreen()
                     .onAppear {
@@ -31,6 +34,7 @@ struct ToDoAppApp: App {
                         }
                     }
             } else {
+            // Show main content view after splash screen
                 ContentView()
             }
         }

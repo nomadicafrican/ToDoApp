@@ -25,10 +25,10 @@ struct Task: Identifiable, Codable {
     /// Due date for the task.
     var dueDate: Date
     
-    /// A flag indicating whether the task is completed.
+    /// A flag indicating whether the task is completed or not.
     var isCompleted: Bool
     
-    /// A computed property to check if the task is overdue.
+    /// A computed property to check if the task is overdue or ontime.
     var isOverdue: Bool {
         !isCompleted && dueDate < Date()
     }

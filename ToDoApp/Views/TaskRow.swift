@@ -12,11 +12,14 @@
  
 import SwiftUI
 
+// View that displays a summarized row for a single task
 struct TaskRow: View {
+    /// Task to be displayed in the row
     var task: Task
     
     var body: some View {
         HStack {
+            // Displays task title and due date with styling
             VStack(alignment: .leading) {
                 Text(task.title)
                     .font(.headline)
@@ -25,7 +28,7 @@ struct TaskRow: View {
                     .font(.subheadline)
                     .foregroundColor(task.isCompleted ? .green : (task.isOverdue ? .red : .orange))
             }
-            
+            // Pushes status icon to the far right
             Spacer()
             
             // Visual indicator based on task status.
@@ -40,11 +43,12 @@ struct TaskRow: View {
                     .foregroundColor(.orange)
             }
         }
+        // Adds vertical spacing for visual clarity
         .padding(.vertical, 5)
     }
 }
 
-// MARK: - Preview
+// MARK: - Preview for SwiftUI Canvas with a sample overdue task
 struct TaskRow_Previews: PreviewProvider {
     static var previews: some View {
         TaskRow(task: Task(title: "Sample Task", dueDate: Date().addingTimeInterval(-3600), isCompleted: false))

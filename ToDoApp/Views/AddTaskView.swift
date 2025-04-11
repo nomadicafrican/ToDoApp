@@ -13,6 +13,7 @@
  
 import SwiftUI
 
+/// View for adding a new task with title and due date
 struct AddTaskView: View {
     /// Environment variable to dismiss the view.
     @Environment(\.presentationMode) var presentationMode
@@ -26,6 +27,7 @@ struct AddTaskView: View {
     
     var body: some View {
         NavigationView {
+            // Form with input fields for task details
             Form {
                 Section(header: Text("Task Info")) {
                     TextField("Task Title", text: $title)
@@ -59,7 +61,7 @@ struct AddTaskView: View {
     }
 }
 
-// MARK: - Preview
+// MARK: - Preview provider for SwiftUI canvas
 struct AddTaskView_Previews: PreviewProvider {
     static var previews: some View {
         AddTaskView(dataStore: TaskDataStore())

@@ -22,7 +22,7 @@ class TaskDataStore: ObservableObject {
     /// The key used for saving tasks in UserDefaults.
     private let tasksKey = "SavedTasksKey"
     
-    /// The array of tasks that will be displayed and modified by the app.
+    /// An array of tasks that will be displayed and modified by the app.
     @Published var tasks: [Task] = []
     
     /// Initializes the TaskDataStore by loading tasks from persistent storage.
@@ -32,14 +32,14 @@ class TaskDataStore: ObservableObject {
     
     // MARK: - Public Methods
     
-    /// Adds a new task to the list and persists the change.
+    /// Adds a new task to the list and persists the changes.
     /// - Parameter task: The Task object to add.
     func addTask(_ task: Task) {
         tasks.append(task)
         saveTasks()
     }
     
-    /// Updates an existing task and persists the change.
+    /// Updates an existing task and persists the changes.
     /// - Parameter task: The Task object that was updated.
     func updateTask(_ task: Task) {
         if let index = tasks.firstIndex(where: { $0.id == task.id }) {

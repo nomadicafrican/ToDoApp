@@ -13,7 +13,9 @@
  
 import SwiftUI
 
+// View to display task details and update its completion status
 struct TaskDetailView: View {
+    /// The task object being displayed and edited
     var task: Task
     /// Observed data store to update task changes.
     @ObservedObject var dataStore: TaskDataStore
@@ -30,10 +32,12 @@ struct TaskDetailView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
+            // Displays task title with styling
             Text(task.title)
                 .font(.title)
                 .fontWeight(.bold)
             
+            // Displays formatted due date
             Text("Due: \(task.dueDate.formatted(date: .abbreviated, time: .shortened))")
                 .font(.headline)
             
@@ -42,6 +46,7 @@ struct TaskDetailView: View {
                 Text(isCompleted ? "✅ Completed" : "⚠️ Pending")
                     .foregroundColor(isCompleted ? .green : .red)
             }
+            // Listen to toggle changes and update the task in the data store
             .onChange(of: isCompleted) { newValue in
                 // Update the task in the data store when toggled.
                 var updatedTask = task
@@ -51,12 +56,13 @@ struct TaskDetailView: View {
             
             Spacer()
         }
+        // Add padding and title to the view
         .padding()
         .navigationTitle("Task Details")
     }
 }
 
-// MARK: - Preview
+// MARK: - Preview for SwiftUI Canvas with a sample task and data store
 struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let store = TaskDataStore()

@@ -1,6 +1,6 @@
 import SwiftUI
 
-// This struct defines the model for a Task
+// This defines the model for a Task
 struct Task: Identifiable {
     var id = UUID()
     var title: String
@@ -8,7 +8,7 @@ struct Task: Identifiable {
     var isCompleted: Bool
 }
 
-// Main View
+// The Main View
 struct ContentView: View {
     @State private var tasks: [Task] = [
         Task(title: "Finish Swift assignment", dueDate: Date().addingTimeInterval(86400), isCompleted: false),
@@ -30,7 +30,7 @@ struct ContentView: View {
     }
 }
 
-// A single row in the task list showing task info
+//Single row in the task list showing task info
 struct TaskRow: View {
     var task: Task
 
